@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "wsm-angular-test-LB"
+    }
+  },
+  "defaultProject": "wsm-angular-test-LB",
+  "cli": {
+    "analytics": "3128ad32-3592-4eff-bb64-07ed0e6f0845"
+  }
 }

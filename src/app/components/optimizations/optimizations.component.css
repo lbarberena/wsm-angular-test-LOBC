@@ -1,0 +1,81 @@
+.main {
+    background: #FAFAFA 0% 0% no-repeat padding-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.vertical-menu {
+    width: 230px; /* Set a width if you like */
+    margin-left: 67px;
+}
+  
+.vertical-menu a {
+    color: #14375F;
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    opacity: 0.57;
+    width: 256px;
+    height: 66px;
+    cursor: pointer;
+}
+
+.vertical-menu a:hover {
+    color: #14375F;
+    box-shadow: -4px 5px 8px #00000008;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-left: #55ACEC 2px solid;
+}
+
+.vertical-menu a.active {
+    background-color: #04AA6D; /* Add a green color to the "active/current" link */
+    color: #14375F;
+    box-shadow: -4px 5px 8px #00000008;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-left: #55ACEC 2px solid;
+}
+
+.top-label {
+    color: #B2B2B2;
+    margin-top: 8px;
+}
+
+.h2-color {
+    color: #14375F;
+}
+
+.blue-bar-div {
+    background-color: #0971B9;
+    font-family: 'Lato', sans-serif;
+}
+
+.p-blue-bar {
+    color: white;
+    font-size: 14px;
+    padding-left: 50px;
+}
+
+.label-blue-bar {
+    color: #b1b3b5;
+    font-size: 12px;
+    padding-left: 50px;
+    padding-top: 15px;
+}
+
+.button-blue-bar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    color: #14375F;
+    background-color: white;
+    box-shadow: -4px 7px 10px #00000008;
+    font-family: 'Lato', sans-serif;
+}
+
+button:disabled {
+    background-color: rgb(230, 207, 207);
+    color: white;
+}

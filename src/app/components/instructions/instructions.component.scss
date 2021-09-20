@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&display=swap');
+$color: #2c3e50;
+.main {
+    background-color: white;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    margin: 20px;
+    box-shadow: -4px 5px 8px #00000008;
+    border-radius: 0px 5px 5px 0px;
+    opacity: 1;
+    height: auto;
+    width: fit-content;
+    font-family: 'Lato', sans-serif;
+    color: #14375F;
+}
+
+.h3 {
+    padding-left: 48px;
+    padding-top: 15px;
+}
+
+.p-itemVariants {
+    padding-left: 48px;
+}
+
+/* Accordion styles */
+
+.input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+// Layout
+.row2 {
+  display:flex;
+  .col {
+    flex:1;
+    &:last-child {
+      margin-left: 1em;
+    }
+  }
+}
+
+.tabs {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 26px 0 rgba(68, 88, 144, 0.14);
+}
+
+.tab {
+  width: 100%;
+  color: $color;
+  overflow: hidden;
+  &-label2 {
+    display: flex;
+    justify-content: left;
+    padding: 1em;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+    /* Icon */
+    &:hover {
+      background: #DBDBDB;
+    }
+    &::after {
+      content: "\276F";
+      width: 1em;
+      height: 1em;
+      transition: all .35s;
+      margin-left: auto;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: $color;
+    background: white;
+    transition: all .35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $color;
+    cursor: pointer;
+    &:hover {
+      background: darken($color, 10%);
+    }
+  }
+}
+
+input:checked {
+  + .tab-label {
+    background: darken($color, 10%);
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 100vh;
+    padding: 1em;
+  }
+}
+
+.checkbox-accordeon {
+  margin-right: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  opacity: 1;
+}
+
+.checkbox-accordeon:checked {
+  background-color: #189A36!important;
+  border-color: #189A36!important;
+}
+
+.tab-label2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Instructions DIV custom scrollbar */
+.instructions-div {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0971B9; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #064c7e; 
+}

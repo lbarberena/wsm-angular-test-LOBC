@@ -1,0 +1,39 @@
+<main class="main">
+    <!-- INSTRUCTIONS SECTIONS -->
+    <section>
+        <div>
+            <h3 class="h3"><strong>Instructions</strong></h3>
+            <hr style="width: 49px; margin-left: 30px; color: #0971B9; height: 2px; opacity: 1;">
+        </div>
+        <div class="instructions-div">
+            <p class="p-itemVariants" [innerHTML]="data.itemVariants[0].description"></p>
+        </div>
+    </section>
+
+    <!-- OPTIMIZATIONS SECTION -->
+    <section>
+        <div>
+            <h3 class="h3"><strong>Optimizations</strong></h3>
+            <hr style="width: 49px; margin-left: 30px; color: #0971B9; height: 2px; opacity: 1;">
+        </div>
+
+        <!-- ACTIONS CUSTOM ACCORDEON -->
+        <div class="row2" *ngFor="let actions of actionsArray; let i = index;">
+            <div class="container">
+              <div class="col">
+                <div class="tabs">
+                    <div class="tab">
+                        <input class="input" type="checkbox" id="{{ i }}"> <!-- THIS CHECKBOX TOGGLE THE ACCORDEON OPTION -->
+                        <label class="tab-label2" for="{{ i }}" [ngStyle]="{'color': actions.checked? '#189A36' : '#2c3e50'}"><input class="form-check-input checkbox-accordeon" type="checkbox" id="check{{ i }}" (click)="checkAction(actions._id, $event)"><strong>{{ actions.name }}</strong></label>
+                        <div class="tab-content">
+                            <p style="text-align: justify;" [innerHTML]="actions.actionVariants[0].description"></p> <!-- ACCORDEON OPTION DESCRIPTION -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        
+    </section>
+</main>

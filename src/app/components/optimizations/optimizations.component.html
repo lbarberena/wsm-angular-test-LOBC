@@ -1,0 +1,51 @@
+<main class="main">
+    <!-- BLUE BAR -->
+    <section>
+        <div class="blue-bar-div">
+            <div class="row">
+                <div class="col-lg-3">
+                    <label class="label-blue-bar">CAMPAIGN GROUP NAME</label>
+                    <P class="p-blue-bar">{{ groupName }}</P>
+                </div>
+                <div class="col-lg-3">
+                    <label class="label-blue-bar">CAMPAIGN NAME</label>
+                    <P class="p-blue-bar">{{ campaignName }}</P>
+                </div>
+                <div class="col-lg-3">
+                    <label class="label-blue-bar">ACCOUNT PROCESS</label>
+                    <P class="p-blue-bar">{{ min }} out of {{ max }} Campaigns Analyzed</P>
+                </div>
+                <div class="col-lg-3">
+                    <button type="button" [disabled]="!activeBtn" class="btn btn-lg btn-primary btn-sm button-blue-bar">Continue</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Optimizations content & instructions -->
+    <section>
+        <div class="row">
+            <div class="vertical-menu col-lg-3">
+                <div style="text-align: center; margin-top: 15px;">
+                    <label class="top-label">Scenario Selected</label>
+                    <h2 class="h2-color"><strong>High CPA</strong></h2>
+                </div>
+
+                <!-- LEFT BAR OPTIMIZATIONS LIST, IF AN OPTION IS CLICKED, EMIT THE OBJECT TO THE CHILD COMPONENT
+                USING ROUTERLINK AND ROUTERLINKACTIVE SO WE CAN SET THE ACTIVE OPTION -->
+                <a *ngFor="let items of items"
+                    [routerLink]="['/optimizations/', items._id]" [routerLinkActive]="['active']"
+                    (click)="emitSelectedItem( items )"><strong>{{ items.name }}</strong></a>
+            </div>
+        
+            <div class="col-lg-9" style="margin-left: 20px;">
+                <!-- INSTRUCTIONS COMPONENT, WHERE WE EMIT THE SELECTED ITEM AS AN OBSERVABLE,
+                AND LISTEN TO THE CHECKED OUTPUT TO ACTIVATE/DEACTIVATE THE BUTTON -->
+                <app-instructions
+                    [campaignData]="selectedItem.asObservable()"
+                    (checked)="activeContinueBtn($event)">
+                </app-instructions>
+            </div>
+        </div>
+    </section>
+</main>
